@@ -14,11 +14,14 @@ services:
     volumes:
       - ./postgresql:/var/lib/postgresql/data
 
-  ruby_rails:
+  ruby_api:
     build: .
-    container_name: ruby_rails
+    container_name: ruby_api
+    stdin_open: true
+    tty: true      
     ports:
       - "${RAILS_PORT}:${RAILS_PORT}"
+      - "${DEBUG_PORT}:${DEBUG_PORT}"
     depends_on:
       - ruby_pg
     links:
