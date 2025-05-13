@@ -1,6 +1,7 @@
 # Microservicio en Ruby on Rails
 
 ## Modificar conexion a Base de datos
+
 Revisar archivo config/database.yml y modificar la información de conexión a base de datos. Por ejemplo:
 
 **default: &default**
@@ -12,3 +13,12 @@ Revisar archivo config/database.yml y modificar la información de conexión a b
     database: <%= ENV["PG_DB"] %>
     username: <%= ENV["PG_USER"] %>
     password: <%= ENV["PG_PASSWORD"] %>
+
+## Modificar Gemfile
+
+Agregar estas gemas en el final del Gemfile
+
+  gem "debug"
+  gem "byebug"
+  gem "debase"
+  gem "ruby-debug-ide"
