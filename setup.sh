@@ -9,8 +9,8 @@ if [ -z "$(ls -A .)" ]; then
   rails new . --api -d postgresql --skip-bundle
   rm -rf /home/app/src/.git
   rm -rf /home/app/src/.github
-  rm -f /home/app/src/.dockerignore
-  rm -f /home/app/src/Dockerfile
+  # rm -f /home/app/src/.dockerignore
+  # rm -f /home/app/src/Dockerfile
   mv /debug.rb /home/app/src/config/initializers/
 else
   echo "El directorio ya contiene un proyecto Rails. Continuando..."
