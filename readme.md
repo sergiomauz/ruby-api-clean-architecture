@@ -22,3 +22,7 @@ Agregar estas gemas en el final del Gemfile
   gem "byebug"
   gem "debase"
   gem "ruby-debug-ide"
+
+## Agregar breakpoints
+
+Cada breakpoint que se requiera, se necesita agregar el comando **'binding.break'** en la línea anterior desde donde se requiera empezar. Considerar que cada paso que se avance con F10 o F11, se abrirá una nueva pestaña, será necesario ver com evitar eso a futuro.

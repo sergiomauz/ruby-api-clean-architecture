@@ -21,7 +21,6 @@ echo "Executing bundle install..."
 bundle install
 
 # 4. Ejecutar Rails server
-# rails server -b 0.0.0.0 -p 3000
-# rdebug-ide --debug --host 0.0.0.0 --port 1234 -- rails server -p 3000 -b 0.0.0.0
-# bundle exec rdebug-ide --debug --host 0.0.0.0 --port 1234 -c -- rails server -p 3000 -b 0.0.0.0
+# rails server -p 3000 -b 0.0.0.0
 # bundle exec rdbg -O -n -c -- rails server -p 3000 -b 0.0.0.0
+# bundle exec rdbg -O --open --port 1234 -- rails s -b 0.0.0.0 -p 3000

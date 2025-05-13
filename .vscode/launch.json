@@ -6,9 +6,9 @@
     "configurations": [
         {
             "name": "Ruby Debugger: Remote Attach",
-            "type": "ruby_lsp",
+            "type": "rdbg",
             "request": "attach",
-            "debugPort": 1234
+            "debugPort": "localhost:1234"
         }
     ]
 }

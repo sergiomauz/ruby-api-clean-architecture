@@ -1,6 +1,6 @@
 if Rails.env.development?
   require 'debug/session'
   Rails.logger.info "Starting debug session"
-  # the port can be anything
-  DEBUGGER__.open(port: "1234", host: "0.0.0.0")
+  debug_port = ENV.fetch('DEBUG_PORT', '1234').to_s
+  DEBUGGER__.open(port: debug_port, host: "0.0.0.0")
 end
