@@ -6,10 +6,9 @@ RUN apt-get update -qq && apt-get install -y nodejs yarn
 RUN gem install rails bundler sqlite3 pg jwt dry-validation http
 RUN gem install rspec rspec-rails debase ruby-debug-ide
 
-# COPY setup.sh /setup.sh
-RUN chmod +x /setup.sh
+WORKDIR /home/app/src
 
-# COPY debug.rb /debug.rb
-# RUN chmod a+r /debug.rb
+# COPY setup.sh /setup.sh
+# RUN chmod +x /setup.sh
 
 # CMD ["/home/app/setup.sh"]
