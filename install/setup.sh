@@ -18,3 +18,8 @@ fi
 # 3. Ejecutar bundle install
 echo "Executing bundle install..."
 bundle install
+
+
+# 4. Ejecutar Rails server
+# bundle exec rdbg -O --open --port 3001 -- rails s -b 0.0.0.0 -p 3000
+# rdbg -n --open --host 0.0.0.0 --port 3001 -c -- rails s -b 0.0.0.0 -p 3000

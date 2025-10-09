@@ -4,7 +4,7 @@
         {
             "type": "rdbg",
             "name": "Debug Rails (Docker)",
-            "rdbgPath": "bundle exec rdbg",
+            "rdbgPath": "/usr/local/bundle/bin/rdbg",
             "request": "attach",
             "debugPort": "localhost:3001",
             "localfs": true

@@ -20,7 +20,6 @@ services:
     tty: true      
     ports:
       - "${RAILS_PORT}:${RAILS_PORT}"
-      - "${DEBUG_PORT}:${DEBUG_PORT}"
     depends_on:
       - ruby_pg
     links:
@@ -35,3 +34,4 @@ services:
     volumes:
       - ./src:/home/app/src
       - ./data:/home/app/data
+      - ./install:/home/app/install
