@@ -4,7 +4,6 @@ services:
   ruby_pg:
     image: postgres:${PG_VERSION}
     container_name: ruby_pg
-    restart: always
     ports:
       - "${PG_PORT}:${PG_PORT}"
     environment:

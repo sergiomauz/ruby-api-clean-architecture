@@ -46,6 +46,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "debug"
-  gem "debase" 
+  gem "byebug"
+  gem "debase"
   gem "ruby-debug-ide"
 end

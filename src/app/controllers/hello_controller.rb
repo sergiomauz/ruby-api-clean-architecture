@@ -3,7 +3,6 @@ class HelloController < ApplicationController
     a = 1
     b = 2
     x = a + b
-    binding.break
     render plain: "Hello, world!"
   end
 end

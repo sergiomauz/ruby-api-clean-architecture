@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "rdbg",
+            "name": "Debug Rails (Docker)",
+            "rdbgPath": "bundle exec rdbg",
+            "request": "attach",
+            "debugPort": "localhost:3001",
+            "localfs": true
+        }      
+    ]
+}
