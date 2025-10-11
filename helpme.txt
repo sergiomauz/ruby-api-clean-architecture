@@ -1,0 +1,11 @@
+# Run and debug
+rdbg -n --open --host 0.0.0.0 --port 3001 -c -- rails s -b 0.0.0.0 -p 3000
+
+# Generate models
+rails generate model Author name:string country:string biography:string
+rails generate model Book title:string genre:string isbn:string publication_year:integer available_copies:integer author:references
+rails generate model Reader name:string code:string email:string phone:string 
+rails generate model Loan loan_date:date due_date:date return_date reader:references book:references
+
+# Generate controllers
+rails generate controller Authors

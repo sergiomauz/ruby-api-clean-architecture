@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "/hello", to: "hello#index"
+
+  # Authors controller
+  post "/authors", to: "authors#create"
+  put "/authors/:id", to: "authors#update"
 end
