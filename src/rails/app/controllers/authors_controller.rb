@@ -4,16 +4,12 @@ class AuthorsController < ApplicationController
 
     c = create_author_params
 
-    errors = CustomValidationErrorVm.new(
-      property_name: "email", 
-      error_code: "missing", 
-      error_message: "Email is required"
-    )
-    # errors = [
-      
-    #   CustomValidationErrorVm.new(property_name: "password", error_code: "too_short", error_message: "Password must be at least 6 characters")
-    # ]
+    errors = [
+      CustomValidationErrorVm.new(property_name: "email", error_code: "missing", error_message: "Email is required"),
+      CustomValidationErrorVm.new(property_name: "password", error_code: "too_short", error_message: "Password must be at least 6 characters")
+    ]
 
+    raise CustomValidationError.new(message: "Error controlado", errors: errors, code: 400)
 
     render json: c, status: :ok
   end

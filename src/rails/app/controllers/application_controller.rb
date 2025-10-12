@@ -1,23 +1,23 @@
 class ApplicationController < ActionController::API
   rescue_from StandardError, with: :handle_internal_error
-  rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
-  rescue_from ActiveRecord::RecordInvalid, with: :handle_unprocessable_entity
+  # rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
+  # rescue_from ActiveRecord::RecordInvalid, with: :handle_unprocessable_entity
 
   private
 
-  def handle_not_found(exception)
-    render_error(404, 'Not Found', exception)
-  end
+  # def handle_not_found(exception)
+  #   render_error(404, 'Not Found', exception)
+  # end
 
-  def handle_unprocessable_entity(exception)
-    render_error(422, 'Unprocessable Entity', exception)
-  end
+  # def handle_unprocessable_entity(exception)
+  #   render_error(422, 'Unprocessable Entity', exception)
+  # end
 
   def handle_internal_error(exception)
-    render_error(500, 'Internal Server Error', exception)
+    render_error(exception.code, exception.message, exception.details)
   end
 
-  def render_error(status, title, exception)
+  def render_error(status, title, details)
     # {
     #   "exceptions": {
     #     "name": [
@@ -36,10 +36,7 @@ class ApplicationController < ActionController::API
     # }
 
     render json: {
-      status: status,
-      error: title,
-      message: exception.message,
-      backtrace: Rails.env.development? ? exception.backtrace.take(5) : nil
+      details: details
     }.compact, status: status
   end
 end
