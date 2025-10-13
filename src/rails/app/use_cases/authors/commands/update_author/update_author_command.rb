@@ -1,10 +1,11 @@
 module Authors
   module Commands
-    module CreateAuthor
-      class CreateAuthorCommand
-        attr_reader :name, :country, :biography
+    module UpdateAuthor
+      class UpdateAuthorCommand
+        attr_reader :id, :name, :country, :biography
 
-        def initialize(dto)
+        def initialize(id, dto)
+          @id = id
           @name = dto[:name]
           @country = dto[:country]
           @biography = dto[:biography]
