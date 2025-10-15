@@ -13,10 +13,14 @@ module Authors
         def format_validation!
           errors = []
 
-          # errors = [
-          #   CustomValidationErrorVm.new(property_name: "email", error_code: "missing", error_message: "Email is required"),
-          #   CustomValidationErrorVm.new(property_name: "password", error_code: "too_short", error_message: "Password must be at least 6 characters")
-          # ]
+          if @name.nil? || (@name.length < 2 || @name.length > 150)
+            errors << CustomValidationErrorVm.new(
+              property_name: ErrorConstants::CREATE_AUTHOR_FORMAT00001.property_name,
+              error_code: ErrorConstants::CREATE_AUTHOR_FORMAT00001.error_code,
+              error_message: ErrorConstants::CREATE_AUTHOR_FORMAT00001.error_message
+            )            
+          end
+        
 
           if errors.any?
             raise CustomValidationError.new(message: "Error controlado", errors: errors, code: HttpStatus::CONFLICT)

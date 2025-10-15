@@ -14,11 +14,6 @@ module Authors
         def format_validation!
           errors = []
 
-          # errors = [
-          #   CustomValidationErrorVm.new(property_name: "email", error_code: "missing", error_message: "Email is required"),
-          #   CustomValidationErrorVm.new(property_name: "password", error_code: "too_short", error_message: "Password must be at least 6 characters")
-          # ]
-
           if errors.any?
             raise CustomValidationError.new(message: "Error controlado", errors: errors, code: HttpStatus::CONFLICT)
           end
