@@ -20,7 +20,14 @@ module Authors
               error_message: ErrorConstants::CREATE_AUTHOR_FORMAT00001.error_message
             )            
           end
-        
+
+          if @country.nil? || (@country.length != 2)
+            errors << CustomValidationErrorVm.new(
+              property_name: ErrorConstants::CREATE_AUTHOR_FORMAT00002.property_name,
+              error_code: ErrorConstants::CREATE_AUTHOR_FORMAT00002.error_code,
+              error_message: ErrorConstants::CREATE_AUTHOR_FORMAT00002.error_message
+            )            
+          end        
 
           if errors.any?
             raise CustomValidationError.new(message: "Error controlado", errors: errors, code: HttpStatus::CONFLICT)

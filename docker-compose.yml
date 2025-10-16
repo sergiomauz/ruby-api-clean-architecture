@@ -1,9 +1,9 @@
-name: ruby_3_4_3_bookworm
+name: big_library
 
 services:  
-  ruby_pg:
+  big_library_db:
     image: postgres:${PG_VERSION}
-    container_name: ruby_pg
+    container_name: big_library_db
     ports:
       - "${PG_PORT}:${PG_PORT}"
     environment:
@@ -13,17 +13,17 @@ services:
     volumes:
       - ./postgresql:/var/lib/postgresql/data
 
-  ruby_api:
+  big_library_api:
     build: .
-    container_name: ruby_api
+    container_name: big_library_api
     stdin_open: true
     tty: true      
     ports:
       - "${RAILS_PORT}:${RAILS_PORT}"
     depends_on:
-      - ruby_pg
+      - big_library_db
     links:
-      - ruby_pg
+      - big_library_db
     environment:
       - PG_HOST=${PG_HOST}
       - PG_DB=${PG_DB}

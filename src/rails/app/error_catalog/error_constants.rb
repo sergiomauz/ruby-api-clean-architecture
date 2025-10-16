@@ -31,6 +31,6 @@ class ErrorConstants
 
   # CreateAuthor
   CREATE_AUTHOR_FORMAT00001 = ErrorTuple.new("CreateAuthor-F00001", "name", "'name' must have between 2 and 150 characters.")
-  CREATE_AUTHOR_FORMAT00002 = ErrorTuple.new("CreateAuthor-F00002", "description", "'description' must have between 3 and 150 characters.")
+  CREATE_AUTHOR_FORMAT00002 = ErrorTuple.new("CreateAuthor-F00002", "country", "'country' must have 2 characters.")
   CREATE_AUTHOR_CONTENT00001 = ErrorTuple.new("CreateAuthor-C00001", "name", "This name already exists. Try another name.")
 end
